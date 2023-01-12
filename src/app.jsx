@@ -60,18 +60,19 @@ const Item = (props) => (
   )
 
 const Search = () => {
-  const handleChange = (event) => {
-    // synthetic event
-    console.log(event);
+  const [searchTerm, setSearchTerm] = React.useState('');
 
-    // value of target (input HTML element)
-    console.log(event.target.value);
+  const handleChange = (event) => {
+    setSearchTerm(event.target.value);
   };
 
   return (
     <div>
       <label htmlFor="search">Search: </label>
       <input id="search" type="text" onChange={handleChange} />
+      <p>
+        searching for <strong>{searchTerm}</strong>
+      </p>
     </div>
   );
 };
