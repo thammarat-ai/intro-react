@@ -30,10 +30,30 @@ const App = () => {
     story.title.toLowerCase().includes(searchTerm.toLocaleLowerCase())
   )
 
+<<<<<<< HEAD
   return (
     <div>
       <h1>My Hacker Stories</h1>
       <Search onSearch={handleSearch} search={searchTerm} />
+=======
+const Search = () => {
+  const [searchTerm, setSearchTerm] = React.useState('');
+
+  const handleChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  return (
+    <div>
+      <label htmlFor="search">Search: </label>
+      <input id="search" type="text" onChange={handleChange} />
+      <p>
+        searching for <strong>{searchTerm}</strong>
+      </p>
+    </div>
+  );
+};
+>>>>>>> d2ab2c6e743cd69db8ccfb63c9efde4ef5ac00d3
 
       <hr />
       <List list={searchedStories} />
